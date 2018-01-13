@@ -1,7 +1,7 @@
 声明：仅用于学习交流
 
 # chongding
-测试冲顶大会的辅助工具mac+iphone版
+测试冲顶大会的辅助工具mac os+iphone版
 
 #思路
 给手机截屏，上传图片，分析图片文字（使用ocr工具，对应python库为pytesseract），调用百度关键字索引，打开浏览器显示搜索结果
