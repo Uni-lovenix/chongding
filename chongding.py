@@ -22,6 +22,7 @@ def pull_screenshot():
 
 while(True):
 	q = input('input:')
+	start = time.time()
 	if q.startswith('q'):
 		break
 	pull_screenshot()
@@ -44,3 +45,5 @@ while(True):
 	p = {'wd':word}
 	url = 'http://www.baidu.com/s?' + urllib.parse.urlencode(p)
 	webbrowser.open(url)
+	end = time.time()
+	print('using time:', end-start)
