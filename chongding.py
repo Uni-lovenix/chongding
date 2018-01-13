@@ -1,6 +1,5 @@
 # coding=utf-8
 import os
-import shutil
 import time
 from PIL import Image
 import wda
