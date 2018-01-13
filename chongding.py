@@ -9,6 +9,8 @@ import webbrowser
 import urllib
 import jieba
 
+isusingjieba = False
+
 r = re.compile(r'[0-9]\.*.?')
 
 c = wda.Client()
@@ -29,6 +31,15 @@ def google_search(word):
 	p_g = {'q':word}
 	url_g = 'https://www.google.co.jp/search?' + urllib.parse.urlencode(p_g)
 	webbrowser.open(url_g)
+
+def usingjieba(word):
+	cuts = jieba.cut(word, cut_all=False)
+	w = ''
+	for i  in cuts:
+	    # print(c)
+	    w += i +' '
+	return word
+
 
 while(True):
 	q = input('input:')
@@ -53,12 +64,8 @@ while(True):
 	        word = s
 	        break
 
-	cuts = jieba.cut(word, cut_all=False)
-	w = ''
-	for i  in cuts:
-	    # print(c)
-	    w += i +' '
-	word = w
+	if isusingjieba:
+		word = usingjieba(word)
 
 	baidu_search(word)
 	# google_search(word)
