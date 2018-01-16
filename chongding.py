@@ -41,7 +41,7 @@ def usingjieba(word):
 
 def bakpng():
 	name = time.time()
-	shutil.copyfile('./1.png', './screenshot_backups/'+name+'.png')
+	shutil.copyfile('./1.png', './screenshot_backups/'+str(name)+'.png')
 
 
 def main():
@@ -65,7 +65,10 @@ def main():
 		    g = r.match(l[i])
 		    if g != None:
 		        # print(l[i])
-		        word = l[i] + l[i+1]
+		        try:
+		        	word = l[i] + l[i+1]
+		        except:
+		        	word = l[i]
 		        break
 
 		if isusingjieba:
